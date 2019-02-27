@@ -119,11 +119,11 @@ class pressure(object):
             units = units.upper()
         val = self.value(units)
         if units == "MB":
-            return "%.1f mb" % val
+            return "%.1f мБар" % val
         elif units == "HPA":
-            return "%.1f hPa" % val
+            return "%.1f гПа" % val
         elif units == "IN":
-            return "%.2f inches" % val
+            return "%.2f дюйм" % val
 
 class speed(object):
     """A class representing a wind speed value."""
@@ -182,17 +182,17 @@ class speed(object):
             units = units.upper()
         val = self.value(units)
         if units == "KMH":
-            text = "%.0f km/h" % val
+            text = "%.0f километров в час" % val
         elif units == "KT":
-            text = "%.0f knots" % val
+            text = "%.0f узлов" % val
         elif units == "MPH":
-            text = "%.0f mph" % val
+            text = "%.0f миль в час" % val
         elif units == "MPS":
-            text = "%.0f mps" % val
+            text = "%.0f метров в секунду" % val
         if self._gtlt == ">":
-            text = "greater than "+text
+            text = "выше чем "+text
         elif self._gtlt == "<":
-            text = "less than "+text
+            text = "меньше чем "+text
         return text
 
 
@@ -290,29 +290,29 @@ class distance(object):
             else:
                 text = "%.0f" % self.value(units)
         if units == "SM" or units == "MI":
-            text += " miles"
+            text += " миль"
         elif units == "M":
-            text += " meters"
+            text += " метров"
         elif units == "KM":
-            text += " km"
+            text += " километров"
         elif units == "FT":
-            text += " feet"
+            text += " футов"
         elif units == "IN":
-            text += " inches"
+            text += " дюймов"
         if self._gtlt == ">":
-            text = "greater than "+text
+            text = "выше чем "+text
         elif self._gtlt == "<":
-            text = "less than "+text
+            text = "меньше чем  "+text
         return text
 
 
 class direction(object):
     """A class representing a compass direction."""
 
-    compass_dirs = { "N":  0.0, "NNE": 22.5, "NE": 45.0, "ENE": 67.5,
-                     "E": 90.0, "ESE":112.5, "SE":135.0, "SSE":157.5,
-                     "S":180.0, "SSW":202.5, "SW":225.0, "WSW":247.5,
-                     "W":270.0, "WNW":292.5, "NW":315.0, "NNW":337.5 }
+    compass_dirs = { "С":  0.0, "ССВ": 22.5, "СВ": 45.0, "ВСВ": 67.5,
+                     "В": 90.0, "ВЮВ":112.5, "ЮВ":135.0, "ЮЮВ":157.5,
+                     "Ю":180.0, "ЮЮЗ":202.5, "ЮЗ":225.0, "ЗЮЗ":247.5,
+                     "З":270.0, "ЗСЗ":292.5, "СЗ":315.0, "ССЗ":337.5 }
 
     def __init__( self, d ):
         if d in direction.compass_dirs:

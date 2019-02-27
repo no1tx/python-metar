@@ -153,7 +153,7 @@ ICE_ACCRETION_RE = re.compile(
 loc_terms = [
     ("OHD", "overhead"),
     ("DSNT", "distant"),
-    ("AND", "and"),
+    ("AND", "и"),
     ("VC", "nearby")
 ]
 
@@ -166,101 +166,101 @@ def xlate_loc(loc):
 
 
 # translation of the sky-condition codes into english
-SKY_COVER = { "SKC":"clear",
-              "CLR":"clear",
-              "NSC":"clear",
-              "NCD":"clear",
-              "FEW":"a few ",
-              "SCT":"scattered ",
-              "BKN":"broken ",
-              "OVC":"overcast",
+SKY_COVER = { "SKC":"ясно ",
+              "CLR":"ясно ",
+              "NSC":"ясно ",
+              "NCD":"ясно ",
+              "FEW":"несколько ",
+              "SCT":"отдельные ",
+              "BKN":"разорванные ",
+              "OVC":"пасмурно",
               "///":"",
-              "VV":"indefinite ceiling" }
+              "VV":"нихуя не видно" }
 
 
 CLOUD_TYPE = {
-    "AC": "altocumulus",
-    "ACC": "altocumulus castellanus",
-    "ACSL": "standing lenticular altocumulus",
-    "AS": "altostratus",
-    "CB": "cumulonimbus",
-    "CBMAM": "cumulonimbus mammatus",
-    "CCSL": "standing lenticular cirrocumulus",
-    "CC": "cirrocumulus",
-    "CI": "cirrus",
-    "CS": "cirrostratus",
-    "CU": "cumulus",
-    "NS": "nimbostratus",
-    "SC": "stratocumulus",
-    "ST": "stratus",
-    "SCSL": "standing lenticular stratocumulus",
-    "TCU": "towering cumulus",
+    "AC": "высококучевые облака",
+    "ACC": "высококучевые башенковидные облака",
+    "ACSL": "стоячие линзовидные высококучевые облака",
+    "AS": "высокослоистые облака",
+    "CB": "кучево-дождевые облака",
+    "CBMAM": "кучево-дождевые вымеобразные облака",
+    "CCSL": "стоячие линзовидные перисто-кучевые облака",
+    "CC": "перисто-кучевые облака",
+    "CI": "перистые облака",
+    "CS": "перисто-слоистые облака",
+    "CU": "кучевые облака",
+    "NS": "слоисто-дождевые облака",
+    "SC": "слоисто-кучевые облака",
+    "ST": "слоистые",
+    "SCSL": "стоячие линзовидные слоисто-кучевые облака",
+    "TCU": "возвышающиеся кучевые облака",
 }
 
 # translation of the present-weather codes into english
 
-WEATHER_INT = { "-":"light",
-                "+":"heavy",
-                "-VC":"nearby light",
-                "+VC":"nearby heavy",
-                "VC":"nearby" }
-WEATHER_DESC = { "MI":"shallow",
-                 "PR":"partial",
-                 "BC":"patches of",
-                 "DR":"low drifting",
-                 "BL":"blowing",
-                 "SH":"showers",
-                 "TS":"thunderstorm",
-                 "FZ":"freezing" }
-WEATHER_PREC = { "DZ":"drizzle",
-                 "RA":"rain",
-                 "SN":"snow",
-                 "SG":"snow grains",
-                 "IC":"ice crystals",
-                 "PL":"ice pellets",
-                 "GR":"hail",
-                 "GS":"snow pellets",
-                 "UP":"unknown precipitation",
+WEATHER_INT = { "-":"легкий",
+                "+":"тяжелый",
+                "-VC":"слегка легкий",
+                "+VC":"слегка тяжелый",
+                "VC":"слегка" }
+WEATHER_DESC = { "MI":"мелкий",
+                 "PR":"частичный",
+                 "BC":"пятна",
+                 "DR":"низкодрейфующий",
+                 "BL":"ветренный",
+                 "SH":"",
+                 "TS":"гроза",
+                 "FZ":"заморозки" }
+WEATHER_PREC = { "DZ":"морось",
+                 "RA":"дождь",
+                 "SN":"снегопад",
+                 "SG":"снежные зерна",
+                 "IC":"ледяные кристаллы",
+                 "PL":"ледяные гранулы",
+                 "GR":"град",
+                 "GS":"снежные гранулы",
+                 "UP":"неизвестное говно с неба",
                  "//":"" }
-WEATHER_OBSC = { "BR":"mist",
-                 "FG":"fog",
-                 "FU":"smoke",
-                 "VA":"volcanic ash",
-                 "DU":"dust",
-                 "SA":"sand",
-                 "HZ":"haze",
-                 "PY":"spray" }
-WEATHER_OTHER = { "PO":"sand whirls",
-                  "SQ":"squalls",
-                  "FC":"funnel cloud",
-                  "SS":"sandstorm",
-                  "DS":"dust storm" }
+WEATHER_OBSC = { "BR":"туман",
+                 "FG":"густой туман",
+                 "FU":"дым",
+                 "VA":"вулканический пепел",
+                 "DU":"пыль",
+                 "SA":"песок",
+                 "HZ":"мгла",
+                 "PY":"брызги" }
+WEATHER_OTHER = { "PO":"песчаные вихри",
+                  "SQ":"шквалы",
+                  "FC":"воронкообразное облако",
+                  "SS":"песчаная буря",
+                  "DS":"пылевая буря" }
 
-WEATHER_SPECIAL = { "+FC":"tornado" }
+WEATHER_SPECIAL = { "+FC":"торнадо" }
 
-COLOR = { "BLU":"blue",
-          "GRN":"green",
-          "WHT":"white" }
+COLOR = { "BLU":"синий",
+          "GRN":"зеленый",
+          "WHT":"белый" }
 
 # translation of various remark codes into English
 
-PRESSURE_TENDENCY = { "0":"increasing, then decreasing",
-                      "1":"increasing more slowly",
-                      "2":"increasing",
-                      "3":"increasing more quickly",
-                      "4":"steady",
-                      "5":"decreasing, then increasing",
-                      "6":"decreasing more slowly",
-                      "7":"decreasing",
-                      "8":"decreasing more quickly" }
+PRESSURE_TENDENCY = { "0":"увеличивается, затем уменьшается",
+                      "1":"увеличивается медленнее",
+                      "2":"увеличение",
+                      "3":"увеличивается быстрее",
+                      "4":"стабильное",
+                      "5":"уменьшается, затем увеличивается",
+                      "6":"уменьшается медленнее",
+                      "7":"уменьшение",
+                      "8":"уменьшается быстрее" }
 
-LIGHTNING_FREQUENCY = { "OCNL":"occasional",
-                        "FRQ":"frequent",
-                        "CONS":"constant" }
+LIGHTNING_FREQUENCY = { "OCNL":"нечастая",
+                        "FRQ":"частая",
+                        "CONS":"постоянная" }
 LIGHTNING_TYPE = { "IC":"intracloud",
-                   "CC":"cloud-to-cloud",
-                   "CG":"cloud-to-ground",
-                   "CA":"cloud-to-air" }
+                   "CC":"облако-в-облако",
+                   "CG":"облако-в-землю",
+                   "CA":"облако-в-воздух" }
 
 REPORT_TYPE = { "METAR":"routine report",
                 "SPECI":"special report",
@@ -887,7 +887,7 @@ class Metar(object):
                 self.wind_shift_time -= datetime.timedelta(hours=24)
             else:
                 self.wind_shift_time -= datetime.timedelta(hours=1)
-        text = "wind shift at %d:%02d" %  (wshft_hour, wshft_min)
+        text = "смещение ветра в %d:%02d" %  (wshft_hour, wshft_min)
         if d['front']:
             text += " (front)"
         self._remarks.append(text)
@@ -1093,18 +1093,18 @@ class Metar(object):
         if self.wind_speed is None:
             return "missing"
         elif self.wind_speed.value() == 0.0:
-            text = "calm"
+            text = "спокойно"
         else:
             wind_speed = self.wind_speed.string(units)
             if not self.wind_dir:
-                text = "variable at %s" % wind_speed
+                text = "переменный со скоростью %s" % wind_speed
             elif self.wind_dir_from:
-                text = "%s to %s at %s" % \
+                text = "%s на %s со скоростью %s" % \
                                (self.wind_dir_from.compass(), self.wind_dir_to.compass(), wind_speed)
             else:
-                text = "%s at %s" % (self.wind_dir.compass(), wind_speed)
+                text = "%s со скоростью %s" % (self.wind_dir.compass(), wind_speed)
             if self.wind_gust:
-                text += ", gusting to %s" % self.wind_gust.string(units)
+                text += ", с порывами ветра %s" % self.wind_gust.string(units)
         return text
 
     def peak_wind( self, units="KT" ):
@@ -1116,13 +1116,13 @@ class Metar(object):
         if self.wind_speed_peak is None:
             return "missing"
         elif self.wind_speed_peak.value() == 0.0:
-            text = "calm"
+            text = "спокойно"
         else:
             wind_speed = self.wind_speed_peak.string(units)
             if not self.wind_dir_peak:
                 text = wind_speed
             else:
-                text = "%s at %s" % (self.wind_dir_peak.compass(), wind_speed)
+                text = "%s со скоростью %s" % (self.wind_dir_peak.compass(), wind_speed)
                 if not self.peak_wind_time is None:
                     text += " at %s" % self.peak_wind_time.strftime('%H:%M')
         return text
@@ -1253,16 +1253,16 @@ class Metar(object):
                         cloud, "unknown CLOUD_TYPE of %s" % (cloud, )
                     )
                 elif SKY_COVER[cover].endswith(" "):
-                    what = "clouds"
+                    what = "облака"
                 else:
                     what = ""
                 label = "%s %s" % (SKY_COVER[cover], what)
                 # HACK here to account for 'empty' entries with above format
                 label = " ".join(label.strip().split())
                 if cover == "VV":
-                    label += ", vertical visibility to %s" % (str(height), )
+                    label += ", вертикальная видимость на %s" % (str(height), )
                 else:
-                    label += " at %s" % (str(height), )
+                    label += " на %s" % (str(height), )
                 text_list.append(label)
         return sep.join(text_list)
 
